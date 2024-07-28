@@ -95,10 +95,10 @@ This system can detect the following 14 pathologies from the NIH ChestX-ray14 da
 Feel free to reach out if you have any questions or suggestions!
 
 <div>
-  <a href="https://www.linkedin.com/in/huzaifa-khan" target="_blank">
+  <a href="https://www.linkedin.com/in/huzaifa-khaan/">
     <img src="https://img.shields.io/badge/LinkedIn-Huzaifa%20Khan-blue?logo=linkedin" alt="LinkedIn">
   </a>
-  <a href="mailto:huzaifa@example.com">
+  <a href="mailto:huzukham14@gmail.com">
     <img src="https://img.shields.io/badge/Email-huzaifa%40example.com-red?logo=gmail" alt="Email">
   </a>
 </div>
