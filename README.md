@@ -12,13 +12,34 @@ Welcome to the AI-Powered CXR Diagnostic System! This project utilizes advanced 
 - **User-Friendly Interface**: Simple and intuitive web interface for uploading and analyzing images.
 - **Real-Time Results**: Provides quick diagnostic results to assist radiologists in making informed decisions.
 
+## Pathologies Detected
+
+This system can detect the following 14 pathologies from the NIH ChestX-ray14 dataset:
+
+1. Atelectasis
+2. Cardiomegaly
+3. Effusion
+4. Infiltration
+5. Mass
+6. Nodule
+7. Pneumonia
+8. Pneumothorax
+9. Consolidation
+10. Edema
+11. Emphysema
+12. Fibrosis
+13. Pleural Thickening
+14. Hernia
+
+![00000149_006](https://github.com/user-attachments/assets/b72ccd4d-f09c-498a-b435-99f09d6b9c0e)
+
+
 ## Technologies Used
 
 <div>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="40" height="40" alt="Python">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" width="40" height="40" alt="PyTorch">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original.svg" width="40" height="40" alt="Flask">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" width="40" height="40" alt="Docker">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="40" height="40" alt="GitHub">
 </div>
 
@@ -69,3 +90,15 @@ Welcome to the AI-Powered CXR Diagnostic System! This project utilizes advanced 
 ├── templates/            # HTML templates
 ├── testing_images/       # Directory for test images
 └── .vscode/              # VSCode configuration files
+```
+
+Feel free to reach out if you have any questions or suggestions!
+
+<div>
+  <a href="https://www.linkedin.com/in/huzaifa-khan" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-Huzaifa%20Khan-blue?logo=linkedin" alt="LinkedIn">
+  </a>
+  <a href="mailto:huzaifa@example.com">
+    <img src="https://img.shields.io/badge/Email-huzaifa%40example.com-red?logo=gmail" alt="Email">
+  </a>
+</div>
