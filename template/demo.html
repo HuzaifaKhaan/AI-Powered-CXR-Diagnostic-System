@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiR</title>
+    <link rel="stylesheet" href="style-demo.css">
+    <!-- Fontawesome Link for Icons -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+          <a href="/index.html" class="logo"><img src="/img/logooo.png" img></a>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </label>
+        <ul class="all-links">
+          <li><a href="./index.html">Home</a></li> 
+          <!-- <li><a href="#services">Services</a></li> -->
+          <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+          <!-- <li><a href="#about">About Us</a></li> -->
+          <li><a href="./index.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="homepage" id="home">
+      <div class="content">
+        
+        <!-- <a href="#more">Upload file.</a> -->
+        <div class="button-container">
+          <button onclick="toggleSingleFileModal()">Upload Single File</button>
+          <button onclick="toggleMultipleFilesModal()">Upload Multiple Files</button>
+        </div>
+          
+        <div id="response"></div>
+        <div id="singleFileModal" class="modal">
+            <span class="close" onclick="toggleSingleFileModal()">&times;</span>
+            <form id="singleFileForm" method="post" enctype="multipart/form-data">
+              <input type="file" name="files" accept="image/*">
+              <input type="button" value="Upload" onclick="submitSingleFile()">
+            </form>
+          </div>
+          
+          <div id="multipleFilesModal" class="modal">
+            <span class="close" onclick="toggleMultipleFilesModal()">&times;</span>
+            <form id="multipleFilesForm" method="post" enctype="multipart/form-data">
+              <input type="file" name="files" accept="image/*" multiple>
+              <input type="button" value="Upload" onclick="submitMultipleFiles()">
+            </form>
+          </div>
+          
+          <script>
+            function toggleSingleFileModal() {
+              var modal = document.getElementById("singleFileModal");
+              modal.style.display = modal.style.display === "block" ? "none" : "block";
+            }
+          
+            function toggleMultipleFilesModal() {
+              var modal = document.getElementById("multipleFilesModal");
+              modal.style.display = modal.style.display === "block" ? "none" : "block";
+            }
+            function submitSingleFile() {
+            var formData = new FormData(document.getElementById("singleFileForm"));
+            sendFilesToServer(formData);
+            }
+
+            function submitMultipleFiles() {
+            var formData = new FormData(document.getElementById("multipleFilesForm"));
+            sendFilesToServer(formData);
+            }
+            function sendFilesToServer(formData) {
+            $.ajax({
+              url: 'http://127.0.0.1:5001/process_files',
+              type: 'POST',
+              data: formData,
+              contentType: false,
+              processData: false,
+              success: function(response) {
+                displayResponse(response.files);
+              },
+              error: function(error) {
+                console.log(error);
+              }
+            });
+            }
+            function displayResponse(files) {
+            var responseDiv = document.getElementById('response');
+            responseDiv.innerHTML = '';
+
+            if (files.length > 0) {
+              var responseHTML = '<h3>Response:</h3>';
+              files.forEach(function(file) {
+                responseHTML += '<p>' + file + '</p>';
+              });
+              responseDiv.innerHTML = responseHTML;
+            } else {
+              responseDiv.innerHTML = '<p>No files processed.</p>';
+            }
+          }
+          </script>
+          
+
+
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <span>Copyright © 2023 All Rights Reserved</span>
+        </span>
+      </div>
+    </footer>
+
+  </body>
+</html>
